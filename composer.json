@@ -7,7 +7,9 @@
         "psr-4": {
             "Hexlet\\Code\\": "src/"
         },
-        "files": ["src/Cli.php"]
+        "files": [
+            "src/Cli.php",
+            "src/BrainEvenGame.php"]
     },  
     "authors": [
         {
@@ -19,7 +21,8 @@
         "wp-cli/php-cli-tools": "^0.11.13"
     },
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.6"
