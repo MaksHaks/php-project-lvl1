@@ -1,5 +1,5 @@
 #!/usr/bin/env php
-<?php 
+<?php
 // Обеспечение работы автозагрузки (а именно - точного нахождения файла автозагрузки)
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -11,5 +11,6 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function php\project\lvl1\Cli\hello;
+
 hello();
 echo 'Welcome to the Brain Games!';
