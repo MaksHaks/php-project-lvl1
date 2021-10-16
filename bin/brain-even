@@ -1,6 +1,10 @@
 #!/usr/bin/env php
 <?php 
-// Обеспечение работы автозагрузки (а именно - точного нахождения файла автозагрузки)
+
+use function php\project\lvl1\BrainEvenGame\runEvenGame;
+
+//AutoloadPath
+
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
 
@@ -10,6 +14,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function php\project\lvl1\BrainEvenGame\start;
+//Run game "Brain-even".
 
-start();
+runEvenGame();

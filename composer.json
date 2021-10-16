@@ -9,7 +9,8 @@
         },
         "files": [
             "src/Cli.php",
-            "src/BrainEvenGame.php"]
+            "src/Games/BrainEvenGame.php",
+            "src/Engine.php"]
     },  
     "authors": [
         {
