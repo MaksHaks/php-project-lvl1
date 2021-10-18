@@ -8,7 +8,7 @@ use function php\project\lvl1\Engine\runner;
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
 //This file is only for maintenance of the engine for the game.
 
-function runProgressionGame()
+function runProgressionGame(): void
 {
     $instruction = 'What number is missing in the progression?';
     $questions = ['', '', ''];

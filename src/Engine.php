@@ -8,7 +8,7 @@ use function cli\prompt;
 //This file is designed to handle any game from the "Brain Games".
 //This file does not generate data for the game.
 
-function runner(array $questions, array $answers, string $instruction)
+function runner(array $questions, array $answers, string $instruction): void
 {
     //Player greeting and briefing
 
@@ -18,7 +18,8 @@ function runner(array $questions, array $answers, string $instruction)
     line($instruction);
 
     //Questioning the player and checking the answers
-
+    
+    $i = 0;
     for ($i = 0; $i <= 2; $i++) {
         line("Question: {$questions[$i]}");
         $answer = prompt("Your answer");

@@ -8,7 +8,7 @@ use function php\project\lvl1\Engine\runner;
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
 //This file is only for maintenance of the engine for the game.
 
-function runCalcGame()
+function runCalcGame(): void
 {
     $instruction = 'What is the result of the expression?';
     $questions = ['', '', ''];
