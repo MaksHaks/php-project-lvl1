@@ -18,7 +18,7 @@ function runner(array $questions, array $answers, string $instruction): void
     line($instruction);
 
     //Questioning the player and checking the answers
-    
+
     $i = 0;
     for ($i = 0; $i <= 2; $i++) {
         line("Question: {$questions[$i]}");
