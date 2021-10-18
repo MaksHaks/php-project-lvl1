@@ -14,7 +14,7 @@ function runEvenGame(): void
     $questions = ['', '', ''];
     $answers = ['', '', ''];
 
-    //Generating questions for game.
+    //Generating questions & answers for game.
 
     for ($i = 0; $i <= 2; $i++) {
         $questions[$i] = rand(1, 100);
