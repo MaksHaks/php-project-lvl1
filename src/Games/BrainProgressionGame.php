@@ -13,7 +13,6 @@ function runProgressionGame()
     $instruction = 'What number is missing in the progression?';
     $questions = ['', '', ''];
     $answers = ['', '', ''];
-    
 
     //Generating questions and answers for game.
 
