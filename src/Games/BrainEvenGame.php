@@ -14,15 +14,10 @@ function runEvenGame(): void
     $questions = ['', '', ''];
     $answers = ['', '', ''];
 
-//Generating questions for game.
-
-    foreach ($questions as &$value) {
-        $value = rand(1, 100);
-    }
-
-// Generating answers for game.
+    //Generating questions for game.
 
     for ($i = 0; $i <= 2; $i++) {
+        $questions[$i] = rand(1, 100);
         if ($questions[$i] % 2 === 0) {
             $answers[$i] = 'yes';
         } else {
@@ -30,7 +25,7 @@ function runEvenGame(): void
         }
     }
 
-//Run game using engine and pull of data.
+    //Run game using engine and pull of data.
 
     runner($questions, $answers, $instruction);
 }
