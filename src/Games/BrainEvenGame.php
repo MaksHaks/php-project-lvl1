@@ -22,11 +22,11 @@ function runEvenGame(): void
 
 // Generating answers for game.
 
-    foreach ($answers as $key => &$value) {
-        if ($questions[$key] % 2 === 0) {
-            $value = 'yes';
+    for ($i = 0; $i <= 2; $i++) {
+        if ($questions[$i] % 2 === 0) {
+            $answers[$i] = 'yes';
         } else {
-            $value = 'no';
+            $answers[$i] = 'no';
         }
     }
 
