@@ -37,6 +37,6 @@ function runner(array $questions, array $answers, string $instruction)
     //Congratulations to the player if all rounds of the game are won.
 
     if ($i === 3) {
-        line("Congratulations, {$name}");
+        line("Congratulations, {$name}!");
     }
 }
