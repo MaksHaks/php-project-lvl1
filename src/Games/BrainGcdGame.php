@@ -33,7 +33,7 @@ function runGcdGame(): void
     runner($gameData, $instruction);
 }
 
-function realGcd(int $numOne, int $numTwo): string
+function realGcd(int $numOne, int $numTwo)
 {
     $min = min($numOne, $numTwo);
     while ($min >= 1) {
