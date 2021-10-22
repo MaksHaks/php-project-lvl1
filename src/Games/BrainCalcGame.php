@@ -35,7 +35,7 @@ function runCalcGame(): void
     runner($gameData, $instruction);
 }
 
-function realCalc(int $numOne, int $numTwo, string $operand): int
+function realCalc(int $numOne, int $numTwo, string $operand): string
 {
     switch ($operand) {
         case '+':
