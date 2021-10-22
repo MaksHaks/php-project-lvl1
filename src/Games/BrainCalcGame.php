@@ -7,36 +7,44 @@ use function php\project\lvl1\Engine\runner;
 //This file provide & generate pull of data for game "Brain-calc" and handles it with engine.php
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
 //This file is only for maintenance of the engine for the game.
+//It's easy to change number of rounds using $roundNumber
 
 function runCalcGame(): void
 {
     $instruction = 'What is the result of the expression?';
-    $questions = ['', '', ''];
-    $answers = ['', '', ''];
+    $gameData = [];
+    $roundNumber = 3;
     $operands = ['+', '-', '*'];
 
     //Generating questions and answers for game.
 
-    for ($i = 0; $i <= 2; $i++) {
+    for ($i = 0; $i < $roundNumber; $i++) {
         $numOne = rand(1, 10);
         $numTwo = rand(1, 10);
         $operand = $operands[array_rand($operands)];
-        $questions[$i] = "$numOne $operand $numTwo";
 
-        switch ($operand) {
-            case '+':
-                $answers[$i] = (string)($numOne + $numTwo);
-                break;
-            case '-':
-                $answers[$i] = (string)($numOne - $numTwo);
-                break;
-            case '*':
-                $answers[$i] = (string)($numOne * $numTwo);
-                break;
-        }
+        //Writing the question and the correct answer in $gameData
+
+        $question = "{$numOne} {$operand} {$numTwo}";
+        $answer = realCalc($numOne, $numTwo, $operand);
+        $gameData[] = [$question, $answer];
     }
 
     //Run game using engine and pull of data.
 
-    runner($questions, $answers, $instruction);
+    runner($gameData, $instruction);
+}
+
+function realCalc(int $numOne, int $numTwo, string $operand): int
+{
+    switch ($operand) {
+        case '+':
+            return (string)($numOne + $numTwo);
+        case '-':
+            return (string)($numOne - $numTwo);
+        case '*':
+            return (string)($numOne * $numTwo);
+        default:
+            throw new \Exception('Указан неверный математический символ');
+    }
 }

@@ -8,7 +8,7 @@ use function cli\prompt;
 //This file is designed to handle any game from the "Brain Games".
 //This file does not generate data for the game.
 
-function runner(array $questions, array $answers, string $instruction): void
+function runner(array $gameData, string $instruction): void
 {
     //Player greeting and briefing
 
@@ -19,25 +19,23 @@ function runner(array $questions, array $answers, string $instruction): void
 
     //Questioning the player and checking the answers
 
-    $i = 0;
-    for ($i = 0; $i <= 2; $i++) {
-        line("Question: {$questions[$i]}");
-        $answer = prompt("Your answer");
+    foreach ($gameData as $value) {
+        [$question, $answer] = $value;
+        line("Question: {$question}");
+        $playerAnswer = prompt("Your answer");
 
-    //Checking the answer
+        //Checking the answer using answer from $gameData
 
-        if ($answer === $answers[$i]) {
+        if ($playerAnswer === $answer) {
             line("Correct!");
         } else {
-            line("{$answer} is wrong answer ;(. Correct answer was {$answers[$i]}.");
+            line("{$playerAnswer} is wrong answer ;(. Correct answer was {$answer}.");
             line("Let's try again, {$name}!");
-            break;
+            return;
         }
     }
 
     //Congratulations to the player if all rounds of the game are won.
 
-    if ($i === 3) {
-        line("Congratulations, {$name}!");
-    }
+    line("Congratulations, {$name}!");
 }

@@ -7,34 +7,41 @@ use function php\project\lvl1\Engine\runner;
 //This file provide & generate pull of data for game "Brain-gcd" and handles it with engine.php
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
 //This file is only for maintenance of the engine for the game.
+//It's easy to change number of rounds using $roundNumber
 
 function runGcdGame(): void
 {
     $instruction = 'Find the greatest common divisor of given numbers.';
-    $questions = ['', '', ''];
-    $answers = ['', '', ''];
+    $gameData = [];
+    $roundNumber = 3;
 
     //Generating questions & answers for game.
 
-    for ($i = 0; $i <= 2; $i++) {
+    for ($i = 0; $i < $roundNumber; $i++) {
         $numOne = rand(1, 100);
         $numTwo = rand(1, 100);
-        $min = min($numOne, $numTwo);
-        $questions[$i] = "$numOne $numTwo";
 
-    //Checking for real gcd of generated numbers.
+        //Writing the question and the correct answer in $gameData
 
-        while ($min >= 1) {
-            if ($numOne % $min === 0 && $numTwo % $min === 0) {
-                $answers[$i] = (string)$min;
-                $min = 0;
-            } else {
-                $min--;
-            }
-        }
+        $question = "{$numOne} {$numTwo}";
+        $answer = realGcd($numOne, $numTwo);
+        $gameData[] = [$question, $answer];
     }
 
     //Run game using engine and pull of data.
 
-    runner($questions, $answers, $instruction);
+    runner($gameData, $instruction);
+}
+
+function realGcd(int $numOne, int $numTwo): string
+{
+    $min = min($numOne, $numTwo);
+    while ($min >= 1) {
+        if ($numOne % $min === 0 && $numTwo % $min === 0) {
+            return (string)$min;
+            $min = 0;
+        } else {
+            $min--;
+        }
+    }
 }
