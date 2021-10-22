@@ -35,6 +35,7 @@ function runGcdGame(): void
 
 function realGcd(int $numOne, int $numTwo): string
 {
+    $temp = 0;
     $min = min($numOne, $numTwo);
     while ($min >= 1) {
         if ($numOne % $min === 0 && $numTwo % $min === 0) {
