@@ -43,5 +43,5 @@ function realGcd(int $numOne, int $numTwo)
             $min--;
         }
     }
-    return $min;
+    return (string)$min;
 }
