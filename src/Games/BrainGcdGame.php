@@ -38,9 +38,10 @@ function realGcd(int $numOne, int $numTwo): string
     $min = min($numOne, $numTwo);
     while ($min >= 1) {
         if ($numOne % $min === 0 && $numTwo % $min === 0) {
-            return (string)$min;
+            return $min;
         } else {
             $min--;
         }
     }
+    return $min;
 }
