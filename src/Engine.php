@@ -9,7 +9,7 @@ use function cli\prompt;
 //This file does not generate data for the game.
 //It's easy to change number of rounds using const ROUNDS_COUNT.
 
-define('ROUNDS_COUNT', 3);
+const ROUNDS_COUNT = 3;
 
 function runner(array $gameData, string $instruction): void
 {
