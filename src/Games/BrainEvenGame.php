@@ -2,9 +2,9 @@
 
 namespace Php\Project\Lvl1\BrainEvenGame;
 
-use function php\project\lvl1\Engine\runner;
+use function Php\Project\Lvl1\Engine\runner;
 
-use const php\project\lvl1\Engine\ROUNDS_COUNT;
+use const Php\Project\Lvl1\Engine\ROUNDS_COUNT;
 
 //This file provide & generate pull of data for game "Brain-even" and handles it with engine.php
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
