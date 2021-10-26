@@ -1,9 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function php\project\lvl1\Cli\hello;
-
-//AutoloadPath
+use function Php\Project\Lvl1\Cli\hello;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';

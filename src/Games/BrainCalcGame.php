@@ -2,9 +2,9 @@
 
 namespace Php\Project\Lvl1\BrainCalcGame;
 
-use function php\project\lvl1\Engine\runner;
+use function Php\Project\Lvl1\Engine\runner;
 
-use const php\project\lvl1\Engine\ROUNDS_COUNT;
+use const Php\Project\Lvl1\Engine\ROUNDS_COUNT;
 
 //This file provide & generate pull of data for game "Brain-calc" and handles it with engine.php
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
@@ -16,21 +16,14 @@ function runCalcGame(): void
     $gameData = [];
     $operands = ['+', '-', '*'];
 
-    //Generating questions and answers for game.
-
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $numOne = rand(1, 10);
         $numTwo = rand(1, 10);
         $operand = $operands[array_rand($operands)];
-
-        //Writing the question and the correct answer in $gameData
-
         $question = "{$numOne} {$operand} {$numTwo}";
         $answer = realCalc($numOne, $numTwo, $operand);
         $gameData[] = [$question, $answer];
     }
-
-    //Run game using engine and pull of data.
 
     runner($gameData, $instruction);
 }

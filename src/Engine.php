@@ -13,21 +13,15 @@ define('ROUNDS_COUNT', 3);
 
 function runner(array $gameData, string $instruction): void
 {
-    //Player greeting and briefing
-
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line($instruction);
 
-    //Questioning the player and checking the answers
-
     foreach ($gameData as $value) {
         [$question, $answer] = $value;
         line("Question: {$question}");
         $playerAnswer = prompt("Your answer");
-
-        //Checking the answer using answer from $gameData
 
         if ($playerAnswer === $answer) {
             line("Correct!");
@@ -37,8 +31,6 @@ function runner(array $gameData, string $instruction): void
             return;
         }
     }
-
-    //Congratulations to the player if all rounds of the game are won.
 
     line("Congratulations, {$name}!");
 }
