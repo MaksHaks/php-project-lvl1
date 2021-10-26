@@ -1,12 +1,15 @@
 <?php
 
-namespace php\project\lvl1\Engine;
+namespace Php\Project\Lvl1\Engine;
 
 use function cli\line;
 use function cli\prompt;
 
 //This file is designed to handle any game from the "Brain Games".
 //This file does not generate data for the game.
+//It's easy to change number of rounds using const ROUNDS_COUNT.
+
+define('ROUNDS_COUNT', 3);
 
 function runner(array $gameData, string $instruction): void
 {

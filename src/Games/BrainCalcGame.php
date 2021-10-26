@@ -1,24 +1,24 @@
 <?php
 
-namespace php\project\lvl1\BrainCalcGame;
+namespace Php\Project\Lvl1\BrainCalcGame;
 
 use function php\project\lvl1\Engine\runner;
+
+use const php\project\lvl1\Engine\ROUNDS_COUNT;
 
 //This file provide & generate pull of data for game "Brain-calc" and handles it with engine.php
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
 //This file is only for maintenance of the engine for the game.
-//It's easy to change number of rounds using $roundNumber
 
 function runCalcGame(): void
 {
     $instruction = 'What is the result of the expression?';
     $gameData = [];
-    $roundNumber = 3;
     $operands = ['+', '-', '*'];
 
     //Generating questions and answers for game.
 
-    for ($i = 0; $i < $roundNumber; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $numOne = rand(1, 10);
         $numTwo = rand(1, 10);
         $operand = $operands[array_rand($operands)];

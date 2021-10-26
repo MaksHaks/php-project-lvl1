@@ -1,29 +1,29 @@
 <?php
 
-namespace php\project\lvl1\BrainPrimeGame;
+namespace Php\Project\Lvl1\BrainPrimeGame;
 
 use function php\project\lvl1\Engine\runner;
+
+use const php\project\lvl1\Engine\ROUNDS_COUNT;
 
 //This file provide & generate pull of data for game "Brain-prime" and handles it with engine.php
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
 //This file is only for maintenance of the engine for the game.
-//It's easy to change number of rounds using $roundNumber
 
 function runPrimeGame(): void
 {
     $instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $gameData = [];
-    $roundNumber = 3;
 
     //Generating questions and answers for game.
 
-    for ($i = 0; $i < $roundNumber; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $num = rand(2, 100);
 
         //Writing the question and the correct answer in $gameData
 
         $question = $num;
-        $answer = isPrime($num);
+        $answer = isPrime($num) ? 'yes' : 'no';
         $gameData[] = [$question, $answer];
     }
 
@@ -34,7 +34,7 @@ function runPrimeGame(): void
 
 //This function helps to check is number prime or not.
 
-function isPrime(int $num): string
+function isPrime(int $num): bool
 {
     $count = 0;
     $x = $num;
@@ -45,9 +45,5 @@ function isPrime(int $num): string
         $x--;
     }
 
-    if ($count !== 2) {
-        return 'no';
-    } else {
-        return 'yes';
-    }
+    return $count !== 2 ? false : true;
 }

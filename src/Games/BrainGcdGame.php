@@ -1,23 +1,23 @@
 <?php
 
-namespace php\project\lvl1\BrainGcdGame;
+namespace Php\Project\Lvl1\BrainGcdGame;
 
 use function php\project\lvl1\Engine\runner;
+
+use const php\project\lvl1\Engine\ROUNDS_COUNT;
 
 //This file provide & generate pull of data for game "Brain-gcd" and handles it with engine.php
 //Data inlclude information about game ($instruction) and game-data ($questions and $answers)
 //This file is only for maintenance of the engine for the game.
-//It's easy to change number of rounds using $roundNumber
 
 function runGcdGame(): void
 {
     $instruction = 'Find the greatest common divisor of given numbers.';
     $gameData = [];
-    $roundNumber = 3;
 
     //Generating questions & answers for game.
 
-    for ($i = 0; $i < $roundNumber; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $numOne = rand(1, 100);
         $numTwo = rand(1, 100);
 
